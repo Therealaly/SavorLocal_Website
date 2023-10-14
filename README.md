@@ -1,6 +1,6 @@
 # SavorLocal webiste
 
-Website built for Dicoding's "Menjadi Web Developer Expert" Submission. Currently in development.
+Website built for Dicoding's "[Menjadi Web Developer Expert](https://www.dicoding.com/academies/219)" Submission. Currently in development.
 
 ## Installation
 
