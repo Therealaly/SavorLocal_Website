@@ -1,0 +1,131 @@
+@media only screen and (max-width: 600px) {
+  /* smartphone */
+  
+   /* Hamburger Icon */
+   .hamburger-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-inline-end: 10%;
+  }
+  
+  .hamburger-container a {
+    width: fit-content;
+    height: fit-content;
+  }
+
+  #hamburger {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+  }
+
+  #hamburger-icon {
+    transition: transform 0.3s ease-in-out; /* Adjust the duration and easing as needed */
+  }
+  
+  .fa-bars {
+    transform: rotate(0deg);
+  }
+  
+  .fa-times {
+    transform: rotate(180deg);
+  }
+  
+  .sl-header {
+    position: relative;
+    z-index: 4;
+  }
+
+  /* Navigation Drawer */
+  .sl-header__nav-list {
+    position: absolute;
+    top: 0;
+    display: none;
+    background: #362706;
+    color: blanchedalmond;
+    width: 100%;
+    height: fit-content;
+    z-index: 4;
+    padding: 1rem;
+    transform: translate(0, 45px);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .sl-header__nav-list.open {
+    transform: translate(0, 60px);
+    right: 0;
+    display: inline;
+  }
+
+  .sl-header__nav-list ul {
+    flex-direction: column;
+    gap: 1rem;
+    
+  }
+
+  .sl-header__nav-list li {
+    padding: 0;
+  }
+
+  .sl-header__nav-list li a {
+    color: blanchedalmond;
+  }
+
+  .sl-header__nav-list li::before {
+    background-color: blanchedalmond;
+  }
+
+  .sl-header__nav-list  li:hover a {
+    color: white;
+  }
+
+  /* Overlay */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    transition: background 0.3s ease-in-out;
+    pointer-events: none; 
+  }
+  .overlay-open {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  /* content */
+
+  .sl-header__logo-img {
+    width: 8rem; 
+  }
+
+  .sl-jumbotron__img {
+    filter: brightness(50%);
+  }
+
+  .sl-jumbotron__img-overlay {
+    display: none;
+  }
+
+  .sl-jumbotron__desc {
+    text-align: center;
+    transform: translate(0, -100%); 
+  }
+
+  .sl-content {
+    margin-inline-start: 5%;
+    margin-inline-end: 5%;
+  }
+
+  .sl-content__cards {
+    grid-template-columns: 1fr;
+  }
+}
