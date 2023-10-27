@@ -2,14 +2,20 @@ import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
 import '../styles/main-tablet.css';
 import '../styles/main-phone.css';
-import './burger.js';
+import App from './views/app';
 
-import renderRestaurant from './renderRestaurant.js';
-import data from '../public/data/DATA.json'; // Import the default export
+const app = new App({
+  button: document.querySelector('#hamburger'),
+  drawer: document.querySelector('#drawer'),
+  content: document.querySelector('main'),
+  icon: document.querySelector('#hamburger-icon'),
+  overlay: document.getElementById('overlay'),
+});
 
-const { restaurants } = data; // Extract the 'restaurants' property from the imported data
+window.addEventListener('hashchange', () => {
+  app.renderPage();
+});
 
-renderRestaurant(restaurants);
-
-console.log('Hello Coders! :)');
-
+window.addEventListener('load', () => {
+  app.renderPage();
+});

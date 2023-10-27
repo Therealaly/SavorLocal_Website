@@ -1,10 +1,14 @@
+// eslint-disable-next-line no-unused-vars
 import { restaurants } from '../public/data/DATA.json';
 
+// eslint-disable-next-line no-shadow
 const renderRestaurants = (restaurants) => {
   const restaurantContainer = document.querySelector('.sl-content__cards');
 
   restaurants.forEach((restaurant) => {
-    const { name, city, rating, description, pictureId } = restaurant;
+    const {
+      name, city, rating, description, pictureId,
+    } = restaurant;
 
     const restaurantCard = document.createElement('div');
     restaurantCard.classList.add('sl-content__cards-item');
