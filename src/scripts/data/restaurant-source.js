@@ -7,10 +7,28 @@ class RestaurantSources {
     return responseJson.restaurants;
   }
 
-  static async detailRestaurants(id) {
+  static async detailRestaurant(id) {
     const response = await fetch(API_ENDPOINT.DETAIL(id));
     const responseJson = await response.json();
-    return responseJson.restaurants;
+    return responseJson.restaurant;
+  }
+
+  static async RestaurantFoods(id) {
+    const response = await fetch(API_ENDPOINT.DETAIL(id));
+    const responseJson = await response.json();
+    return responseJson.restaurant.menus.foods;
+  }
+
+  static async RestaurantDrinks(id) {
+    const response = await fetch(API_ENDPOINT.DETAIL(id));
+    const responseJson = await response.json();
+    return responseJson.restaurant.menus.drinks;
+  }
+
+  static async RestaurantReviews(id) {
+    const response = await fetch(API_ENDPOINT.DETAIL(id));
+    const responseJson = await response.json();
+    return responseJson.restaurant.customerReviews;
   }
 }
 

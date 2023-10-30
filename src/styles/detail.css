@@ -1,0 +1,85 @@
+.detail-restaurant {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+  flex: 2;
+}
+
+.detail_restaurant_item {
+  flex: 1;
+}
+
+#detailRestaurantText {
+  margin-left: 20px;
+}
+
+.detail-restaurant_menus {
+  margin-top: 10px;
+}
+
+.detail-restaurant_menus-foods {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+}
+
+.detail-restaurant_menus-drinks {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+}
+
+.detail-restaurant_menus-item {
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 100%;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.detail-restaurant_reviews {
+  padding-inline: 20px;
+}
+
+.detail-restaurant_menus-reviews {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 3px;
+}
+
+#reviewerName {
+  margin-bottom: 5px;
+}
+
+#reviewDate {
+  font-size: small;
+  font-weight: 300;
+  color: rgb(75, 75, 75);
+  margin-top: 5px;
+}
+
+#reviewComment {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.like {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #db0000;
+  
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+  
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}

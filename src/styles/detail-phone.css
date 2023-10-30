@@ -1,0 +1,22 @@
+@media only screen and (max-width: 600px) {
+
+  .detail-restaurant {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+  }
+
+  #detailRestaurantText {
+    margin-left: 0px;
+  }
+
+  .detail-restaurant_menus-foods {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .detail-restaurant_menus-drinks {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}

@@ -1,0 +1,5 @@
+@media only screen and (max-width: 992px) {
+  .detail-restaurant_menus-item {
+    font-size: 0.875rem;
+  }
+}
