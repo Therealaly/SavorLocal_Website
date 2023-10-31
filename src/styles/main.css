@@ -127,6 +127,12 @@ img {
 
 #hamburger {
   display: none;
+  border: none;
+  background-color: #E9E5D6 ;
+}
+
+#hamburger:focus {
+  border: none;
 }
 
 /* Jumbotron */
