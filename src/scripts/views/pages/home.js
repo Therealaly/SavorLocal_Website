@@ -28,32 +28,15 @@ const Home = {
           Discover Local Treasure
         </h2>
       </div>
-      <div class="sl-content__cards" id="restaurantList">
-        <!-- Skeleton UI -->
-        <div class="skeleton-container" id="skeletonContainer">
-          <div class="skeleton-card"></div>
-          <div class="skeleton-card"></div>
-          <div class="skeleton-card"></div>
-        </div>
-      </div>
+      <div class="sl-content__cards"></div>
     </div>
     `;
   },
 
   async afterRender() {
-    // Display skeleton UI while data is being fetched
-    const skeletonContainer = document.getElementById('skeletonContainer');
-    skeletonContainer.innerHTML = `
-      <div class="skeleton-card"></div>
-      <div class="skeleton-card"></div>
-      <div class="skeleton-card"></div>
-    `;
-
     // Fungsi ini akan dipanggil setelah render()
     const restaurants = await RestaurantSources.listRestaurants();
-    const restaurantsContainer = document.getElementById('restaurantList');
-    restaurantsContainer.innerHTML = ''; // Clear skeleton UI
-
+    const restaurantsContainer = document.querySelector('.sl-content__cards');
     restaurants.forEach((resto) => {
       restaurantsContainer.innerHTML += createRestoItemTemplate(resto);
     });
