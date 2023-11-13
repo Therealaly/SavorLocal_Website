@@ -2,7 +2,7 @@ import CONFIG from '../../globals/config';
 
 const createRestoDetailTemplate = (resto) => `
   <div class="detail_restaurant_item">
-    <img src="${CONFIG.BASE_IMAGE_URL}${resto.pictureId}" alt="${resto.name}" style="border-radius: 10px; width: 100%; height: 100%; object-fit: cover;">
+    <img data-src="${CONFIG.BASE_IMAGE_URL}${resto.pictureId}" alt="${resto.name}" style="border-radius: 10px; width: 100%; height: 100%; object-fit: cover;">
   </div>
   <div class="detail_restaurant_item" id="detailRestaurantText">
     <h2>${resto.name}</h2>
