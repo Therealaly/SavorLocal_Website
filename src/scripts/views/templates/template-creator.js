@@ -37,11 +37,11 @@ const createRestoReviewTemplate = (review) => `
 
 const createRestoItemTemplate = (resto) => `
   <div class="sl-content__cards-item">
-    <div class="sl-content__cards-item-img">
-      <img src="${CONFIG.BASE_IMAGE_URL}${resto.pictureId}" alt="${resto.name}" style="border-radius: 10px 10px 0 0; width: 100%; height: 100%; object-fit: cover;">
+    <div class="sl-content__cards-item-img ">
+      <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL}${resto.pictureId}" alt="${resto.name}" style="border-radius: 10px 10px 0 0; width: 100%; height: 100%; object-fit: cover;">
     </div>
     <div class="sl-content__cards-item-desc">
-      <h3 style="margin-bottom: 5px;"><a href="/#/detail/${resto.id}" style="color: #000000">${resto.name}</a></h3>
+      <h3 id="restaurant_name" style="margin-bottom: 5px;"><a href="/#/detail/${resto.id}" style="color: #000000">${resto.name}</a></h3>
       <div class="sl-content__cards-item-desc-detail">
         <div class="sl-content__cards-item-desc-detail-point">
           <i class="fas fa-map-marker-alt"></i>
@@ -59,14 +59,14 @@ const createRestoItemTemplate = (resto) => `
   </div>
 `;
 
-const createLikeButtonTemplate = () => `
-  <button aria-label="like this movie" id="likeButton" class="like">
+const createLikeRestoButtonTemplate = () => `
+  <button aria-label="like this restaurant" id="likeButton" class="like">
      <i class="far fa-heart" aria-hidden="true"></i>
   </button>
 `;
 
-const createLikedButtonTemplate = () => `
-  <button aria-label="unlike this movie" id="likeButton" class="like">
+const createUnlikeRestoButtonTemplate = () => `
+  <button aria-label="unlike this restaurant" id="likeButton" class="like">
     <i class="fas fa-heart" aria-hidden="true"></i>
   </button>
 `;
@@ -77,6 +77,6 @@ export {
   createRestoMenuFoodTemplate,
   createRestoMenuDrinkTemplate,
   createRestoReviewTemplate,
-  createLikeButtonTemplate,
-  createLikedButtonTemplate,
+  createLikeRestoButtonTemplate,
+  createUnlikeRestoButtonTemplate,
 };

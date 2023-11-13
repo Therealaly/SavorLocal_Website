@@ -10,29 +10,33 @@ const Detail = {
   async render() {
     return `
     <div id="hero" class="sl-jumbotron">
-    <div class="sl-jumbotron__img-overlay"></div>
-    <img class="sl-jumbotron__img" src="./images/heros/hero-image_4.jpg" alt="SavorLocal promotional header image" />
-    <div class="sl-jumbotron__desc">
-      <h1 class="sl-jumbotron__desc-title">
-        Restaurant Detail
-      </h1>
-      <p style="font-family: 'Open Sans', sans-serif;">
-        Explore this restaurant's menus. Save to Favorite and visit it someday!
-      </p>
+      <div class="sl-jumbotron__img-overlay"></div>
+      <picture class="sl-jumbotron__picture">
+        <source media="(max-width: 600px)" srcset="./images/hero-image_4-small.jpg">
+        <img class="sl-jumbotron__img" src='./images/hero-image_4-large.jpg' 
+            alt="dSavorLocal promotional header image">
+      </picture>
+      <div class="sl-jumbotron__desc">
+        <h1 class="sl-jumbotron__desc-title">
+          Restaurant Detail
+        </h1>
+        <p style="font-family: 'Open Sans', sans-serif;">
+          Explore this restaurant's menus. Save to Favorite and visit it someday!
+        </p>
+      </div>
     </div>
-  </div>
-  <div class="sl-content">
-    <div class="detail-restaurant"></div>
-    <div class="detail-restaurant_menus">
-      <h3>Foods</h3>
-      <div class="detail-restaurant_menus-foods"></div>
-      <h3>Drinks</h3>
-      <div class="detail-restaurant_menus-drinks"></div>
+    <div class="sl-content">
+      <div class="detail-restaurant"></div>
+      <div class="detail-restaurant_menus">
+        <h3>Foods</h3>
+        <div class="detail-restaurant_menus-foods"></div>
+        <h3>Drinks</h3>
+        <div class="detail-restaurant_menus-drinks"></div>
+      </div>
+      <h3>Review</h3>
+      <div class="detail-restaurant_reviews"></div>
     </div>
-    <h3>Review</h3>
-    <div class="detail-restaurant_reviews"></div>
-  </div>
-  <div id="likeButtonContainer"></div>
+    <div id="likeButtonContainer"></div>
     `;
   },
 

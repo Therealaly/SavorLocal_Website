@@ -142,6 +142,11 @@ img {
   height: 31.25rem;
 }
 
+.sl-jumbotron__picture {
+  width: 100%;
+  height: 100%;
+}
+
 .sl-jumbotron__img {
   width: 100%;
   height: 100%;
@@ -329,4 +334,8 @@ img {
   text-decoration: none;
   font-size: 44px;
   color: #362706;
+}
+
+.restaurant-item__not__found {
+
 }

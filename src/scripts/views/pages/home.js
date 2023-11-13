@@ -6,7 +6,11 @@ const Home = {
     return `
     <div id="hero" class="sl-jumbotron">
       <div class="sl-jumbotron__img-overlay"></div>
-      <img class="sl-jumbotron__img" src="./images/heros/hero-image_2.jpg" alt="SavorLocal promotional header image" />
+      <picture class="sl-jumbotron__picture">
+        <source media="(max-width: 600px)" srcset="./images/hero-image_2-small.jpg">
+        <img class="sl-jumbotron__img" src='./images/hero-image_2-large.jpg' 
+            alt="dSavorLocal promotional header image">
+      </picture>
       <div class="sl-jumbotron__desc">
         <h1 class="sl-jumbotron__desc-title">
           Discover, Savor, Repeat
@@ -24,15 +28,32 @@ const Home = {
           Discover Local Treasure
         </h2>
       </div>
-      <div class="sl-content__cards"></div>
+      <div class="sl-content__cards" id="restaurantList">
+        <!-- Skeleton UI -->
+        <div class="skeleton-container" id="skeletonContainer">
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+        </div>
+      </div>
     </div>
     `;
   },
 
   async afterRender() {
+    // Display skeleton UI while data is being fetched
+    const skeletonContainer = document.getElementById('skeletonContainer');
+    skeletonContainer.innerHTML = `
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+    `;
+
     // Fungsi ini akan dipanggil setelah render()
     const restaurants = await RestaurantSources.listRestaurants();
-    const restaurantsContainer = document.querySelector('.sl-content__cards');
+    const restaurantsContainer = document.getElementById('restaurantList');
+    restaurantsContainer.innerHTML = ''; // Clear skeleton UI
+
     restaurants.forEach((resto) => {
       restaurantsContainer.innerHTML += createRestoItemTemplate(resto);
     });
