@@ -10,12 +10,18 @@ Development Server
 ```bash
 npm install
 
+npm run build
+
 npm run start-dev
 ```
 OR
 Production Server
 ```bash
 npm install
+
+npm run build
+
+npm run build-image
 
 npm run serve
 ```
