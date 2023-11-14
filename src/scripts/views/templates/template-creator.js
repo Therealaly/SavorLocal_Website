@@ -2,7 +2,7 @@ import CONFIG from '../../globals/config';
 
 const createRestoDetailTemplate = (resto) => `
   <div class="detail_restaurant_item">
-    <img data-src="${CONFIG.BASE_IMAGE_URL}${resto.pictureId}" alt="${resto.name}" style="border-radius: 10px; width: 100%; height: 100%; object-fit: cover;">
+    <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL}${resto.pictureId}" alt="${resto.name}" style="border-radius: 10px; width: 100%; height: 100%; object-fit: cover;">
   </div>
   <div class="detail_restaurant_item" id="detailRestaurantText">
     <h2>${resto.name}</h2>
@@ -38,7 +38,7 @@ const createRestoReviewTemplate = (review) => `
 const createRestoItemTemplate = (resto) => `
   <div class="sl-content__cards-item">
     <div class="sl-content__cards-item-img ">
-      <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL}${resto.pictureId}" alt="${resto.name}" style="border-radius: 10px 10px 0 0; width: 100%; height: 100%; object-fit: cover;">
+      <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL}${resto.pictureId}" alt="${resto.name}" style="border-radius: 10px 10px 0 0; width: 100%; height: 100%; object-fit: cover;">
     </div>
     <div class="sl-content__cards-item-desc">
       <h3 id="restaurant_name" style="margin-bottom: 5px;"><a href="/#/detail/${resto.id}" style="color: #000000">${resto.name}</a></h3>
